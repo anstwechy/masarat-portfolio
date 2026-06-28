@@ -68,7 +68,9 @@ export default function RootLayout({
       className={`${inter.variable} ${dmSans.variable} ${jetbrains.variable} dark`}
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <div className="bg-ambient" aria-hidden />
+        {/* Base dark backdrop — dynamic scroll-reactive gradient + particles
+            are mounted by SmoothScroll (client). Keep the grid for texture. */}
+        <div className="bg-base" aria-hidden />
         <div className="bg-grid" aria-hidden />
         <SmoothScroll>{children}</SmoothScroll>
       </body>

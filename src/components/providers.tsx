@@ -4,12 +4,15 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { CursorSpotlight } from "@/components/effects/cursor-spotlight";
 import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ParticleField } from "@/components/effects/particle-field";
+import { ScrollGradient } from "@/components/effects/scroll-gradient";
+import { ScrollProgress } from "@/components/effects/scroll-progress";
 
 /**
  * Initializes Lenis smooth scrolling for the whole app and mounts the
- * global cinematic effects (cursor spotlight + GSAP scroll reveals).
- * Respects prefers-reduced-motion: if the user wants reduced motion,
- * Lenis and the effects are not started.
+ * global cinematic effects: scroll-reactive particle network + gradient,
+ * cursor spotlight, and GSAP scroll reveals. All effects respect
+ * prefers-reduced-motion.
  */
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -56,6 +59,9 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <ScrollProgress />
+      <ScrollGradient />
+      <ParticleField />
       <CursorSpotlight />
       <ScrollReveal />
       {children}
