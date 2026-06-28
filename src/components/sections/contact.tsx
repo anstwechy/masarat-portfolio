@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Mail, Github, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, MapPin, ArrowUpRight, Phone, Linkedin } from "lucide-react";
 import { profile } from "@/data/site";
 import { AnimatedBeam } from "@/components/effects/animated-beam";
 import { Magnetic } from "@/components/effects/magnetic";
@@ -42,8 +42,9 @@ export function Contact() {
               Building something that handles real money?
             </h2>
             <p className="mt-4 text-lg text-slate-300">
-              I&apos;m open to senior engineering, architecture, and head-of
-              roles. Reach out and let&apos;s build.
+              {profile.yearsExperience} years building software, currently{" "}
+              {profile.title.toLowerCase()} at {profile.org}.{" "}
+              {profile.availability} — reach out and let&apos;s build.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -58,13 +59,46 @@ export function Contact() {
               </Magnetic>
               <Magnetic strength={0.25}>
                 <a
+                  href={`tel:${profile.phone.replace(/\s/g, "")}`}
+                  className="glass glass-hover inline-flex h-12 items-center gap-2 rounded-lg px-6 text-slate-200"
+                >
+                  <Phone className="h-4 w-4" />
+                  {profile.phoneDisplay}
+                </a>
+              </Magnetic>
+            </div>
+
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-3">
+              <Magnetic strength={0.25}>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass glass-hover inline-flex h-11 items-center gap-2 rounded-lg px-5 text-sm text-slate-200"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                  <ArrowUpRight className="h-4 w-4 opacity-50" />
+                </a>
+              </Magnetic>
+              <Magnetic strength={0.25}>
+                <a
                   href={profile.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass glass-hover inline-flex h-12 items-center gap-2 rounded-lg px-7 text-slate-200"
+                  className="glass glass-hover inline-flex h-11 items-center gap-2 rounded-lg px-5 text-sm text-slate-200"
                 >
                   <Github className="h-4 w-4" />
                   @{profile.githubHandle}
+                  <ArrowUpRight className="h-4 w-4 opacity-50" />
+                </a>
+              </Magnetic>
+              <Magnetic strength={0.25}>
+                <a
+                  href="/resume"
+                  className="glass glass-hover inline-flex h-11 items-center gap-2 rounded-lg px-5 text-sm text-slate-200"
+                >
+                  Download CV
                   <ArrowUpRight className="h-4 w-4 opacity-50" />
                 </a>
               </Magnetic>

@@ -130,3 +130,61 @@ body {
   .animate-delay-500 { animation-delay: 0.5s; }
   .animate-delay-700 { animation-delay: 0.7s; }
 }
+
+/* ============================================================ */
+/* Resume / printable CV                                        */
+/* ============================================================ */
+
+/* The resume page renders on a white card even on the dark site. */
+.resume {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 0;
+}
+
+/* On screen, give the resume page a light, clean backdrop so the white
+   CV reads as a document against the rest of the (dark) site. */
+body:has(.resume) {
+  background: #e2e8f0;
+}
+
+.resume-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0f766e; /* teal-700 */
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.25rem;
+}
+
+/* Hide elements only relevant on screen when printing */
+.no-print {
+  /* visible on screen by default */
+}
+
+/* ---- Print rules ---- */
+@media print {
+  /* Force a clean white page, kill all the dark-site background layers */
+  html, body {
+    background: #ffffff !important;
+  }
+  .bg-base, .bg-ambient, .bg-grid,
+  .no-print,
+  /* hide fixed effect canvases/layers */
+  canvas, [class*="pointer-events-none fixed"] {
+    display: none !important;
+  }
+
+  .resume {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Tighten typography for print, use the whole page */
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+}

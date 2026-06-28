@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight, Github, MapPin } from "lucide-react";
+import { ArrowRight, Github, MapPin, Download } from "lucide-react";
 import { profile } from "@/data/site";
 import { Aurora } from "@/components/effects/aurora";
 import { Magnetic } from "@/components/effects/magnetic";
@@ -24,13 +24,18 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/5 px-3 py-1 text-xs font-medium text-teal-300"
+          className="flex flex-wrap items-center gap-2"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/5 px-3 py-1 text-xs font-medium text-teal-300">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
+            </span>
+            {profile.availability}
           </span>
-          Available for senior engineering &amp; architecture roles
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-slate-300">
+            {profile.yearsExperience} years experience
+          </span>
         </motion.div>
 
         <motion.h1
@@ -86,6 +91,15 @@ export function Hero() {
             >
               <Github className="h-4 w-4" />
               GitHub
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.25}>
+            <a
+              href="/resume"
+              className="glass glass-hover inline-flex h-12 items-center gap-2 rounded-lg px-7 text-slate-200"
+            >
+              <Download className="h-4 w-4" />
+              CV
             </a>
           </Magnetic>
         </motion.div>

@@ -1,0 +1,61 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f1a"/>
+      <stop offset="100%" stop-color="#0e2036"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="50%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+  </g>
+
+  <!-- "M" mark -->
+  <g transform="translate(90, 90)">
+    <rect width="56" height="56" rx="14" fill="#1a365d" stroke="#2dd4bf" stroke-opacity="0.4"/>
+    <text x="28" y="40" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#5eead4" text-anchor="middle">M</text>
+  </g>
+
+  <!-- Badge -->
+  <rect x="90" y="200" width="150" height="34" rx="17" fill="#2dd4bf" fill-opacity="0.1" stroke="#2dd4bf" stroke-opacity="0.3"/>
+  <circle cx="110" cy="217" r="4" fill="#2dd4bf"/>
+  <text x="124" y="222" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#5eead4">Open to work</text>
+
+  <!-- Name -->
+  <text x="90" y="320" font-family="system-ui, sans-serif" font-size="76" font-weight="800" fill="#ffffff">Anas Almesbahi</text>
+
+  <!-- Title (gradient) -->
+  <text x="90" y="396" font-family="system-ui, sans-serif" font-size="48" font-weight="700" fill="url(#accent)">Head of Development · Masarat</text>
+
+  <!-- Tagline -->
+  <text x="90" y="456" font-family="system-ui, sans-serif" font-size="26" font-weight="400" fill="#94a3b8">Architecting Libya's digital banking &amp; fintech platform</text>
+
+  <!-- Footer stats -->
+  <g font-family="system-ui, sans-serif" fill="#5eead4">
+    <text x="90" y="540" font-size="30" font-weight="800">10+</text>
+    <text x="90" y="566" font-size="15" fill="#64748b">years experience</text>
+
+    <text x="290" y="540" font-size="30" font-weight="800">10+</text>
+    <text x="290" y="566" font-size="15" fill="#64748b">production systems</text>
+
+    <text x="540" y="540" font-size="30" font-weight="800">6</text>
+    <text x="540" y="566" font-size="15" fill="#64748b">Libyan banks served</text>
+  </g>
+</svg>
