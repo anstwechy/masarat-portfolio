@@ -62,10 +62,11 @@ export function Mermaid({
     <div
       ref={ref}
       className="flex items-center justify-center overflow-x-auto [&_svg]:max-w-full"
-      dangerouslySetInnerHTML={svg ? { __html: svg } : undefined}
     >
-      {!svg && (
-        <div className="h-48 animate-pulse rounded-lg bg-white/[0.02]" />
+      {svg ? (
+        <div dangerouslySetInnerHTML={{ __html: svg }} />
+      ) : (
+        <div className="h-48 w-full animate-pulse rounded-lg bg-white/[0.02]" />
       )}
     </div>
   );
