@@ -60,9 +60,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      // suppressHydrationWarning: browser extensions (e.g. writing/AI tools)
+      // inject attributes onto <html>/<body> before React hydrates, which trips
+      // a hydration-mismatch warning. This silences only that attribute diff;
+      // it does NOT hide real content mismatches. Standard Next.js pattern.
+      suppressHydrationWarning
       className={`${inter.variable} ${dmSans.variable} ${jetbrains.variable} dark`}
     >
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <div className="bg-ambient" aria-hidden />
         <div className="bg-grid" aria-hidden />
         <SmoothScroll>{children}</SmoothScroll>
