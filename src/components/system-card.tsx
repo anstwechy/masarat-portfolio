@@ -29,15 +29,24 @@ export function SystemCard({
       >
         {/* Accent glow on hover */}
         <div
-          className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-30"
+          className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-40"
           style={{ background: system.accent }}
+          aria-hidden
+        />
+
+        {/* Top accent bar */}
+        <div
+          className="absolute inset-x-0 top-0 h-px opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          style={{
+            background: `linear-gradient(90deg, transparent, ${system.accent}, transparent)`,
+          }}
           aria-hidden
         />
 
         <div className="relative flex items-start justify-between gap-3">
           <div>
             <span
-              className="text-xs font-semibold uppercase tracking-widest"
+              className="text-[11px] font-semibold uppercase tracking-widest"
               style={{ color: system.accent }}
             >
               {system.category}
@@ -53,7 +62,7 @@ export function SystemCard({
         </div>
 
         <p className="relative mt-4 flex-1 text-sm leading-relaxed text-slate-400">
-          {system.tagline}
+          {system.impact}
         </p>
 
         {/* Metrics row */}

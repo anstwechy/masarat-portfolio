@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SystemCard } from "@/components/system-card";
-import { systems } from "@/data/systems";
+import { systems, systemCount } from "@/data/systems";
 
 export const metadata: Metadata = {
   title: "Systems — Anas Almesbahi",
   description:
-    "All ten systems of the Masarat platform — wallet, payments, vouchers, insurance, notifications, AML, voice AI, release management, dev-office workspace, and QA automation.",
+    "The systems of the Masarat platform — wallet & ledger, payments, vouchers, insurance, notifications, AML, voice AI, release management, dev-office workspace, and QA automation.",
 };
 
 export default function SystemsPage() {
@@ -23,9 +23,13 @@ export default function SystemsPage() {
             The Masarat platform
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-slate-400">
-            Ten production systems, designed and built by a single engineer,
-            forming a complete banking & fintech platform.
+            The systems I architected and engineered end to end — together
+            forming a complete digital-banking and fintech platform.
           </p>
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/5 px-3 py-1 text-xs font-medium text-teal-300">
+            <span className="font-display font-bold">{systemCount}</span>
+            systems in this portfolio
+          </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {systems.map((system, i) => (

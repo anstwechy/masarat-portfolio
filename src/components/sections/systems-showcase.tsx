@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { SystemCard } from "@/components/system-card";
-import { systems, categories } from "@/data/systems";
+import { systems, categories, systemCount } from "@/data/systems";
 import { cn } from "@/lib/utils";
 
 export function SystemsShowcase() {
@@ -27,14 +27,19 @@ export function SystemsShowcase() {
             The work
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
-            Ten systems. One platform.
+            The systems I designed and built.
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            A complete fintech & banking-adjacent platform — wallet, payments,
-            vouchers, insurance, notifications, AML, voice AI, release
-            management, an internal dev-office workspace, and QA automation.
+            A complete digital-banking and fintech platform — wallet &amp;
+            ledger, payments, vouchers, insurance, notifications, AML, voice
+            AI, release management, an internal dev-office workspace, and QA
+            automation. Each one I architected and engineered end to end.
             Click any card for the full architecture.
           </p>
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/5 px-3 py-1 text-xs font-medium text-teal-300">
+            <span className="font-display font-bold">{systemCount}</span>
+            systems · filter by category below
+          </div>
         </div>
 
         {/* Filter pills */}

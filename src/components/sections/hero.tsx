@@ -3,13 +3,18 @@
 import { motion } from "motion/react";
 import { ArrowRight, Github, MapPin } from "lucide-react";
 import { profile } from "@/data/site";
+import { Aurora } from "@/components/effects/aurora";
+import { Magnetic } from "@/components/effects/magnetic";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-16">
+      {/* Aurora background blobs */}
+      <Aurora />
+
       {/* Spotlight effect (Aceternity-inspired) */}
       <div
-        className="pointer-events-none absolute left-0 top-0 h-[600px] w-[600px] animate-spotlight rounded-full bg-teal-400/20 opacity-0 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[600px] animate-spotlight rounded-full bg-teal-400/20 opacity-0 blur-[120px]"
         style={{ transform: "translate(-50%, -40%)" }}
         aria-hidden
       />
@@ -25,7 +30,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
           </span>
-          Available for senior engineering & architecture roles
+          Available for senior engineering &amp; architecture roles
         </motion.div>
 
         <motion.h1
@@ -35,7 +40,17 @@ export function Hero() {
           className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
         >
           {profile.name}
-          <span className="block text-gradient">{profile.title}</span>
+          <span
+            className="block bg-clip-text text-transparent"
+            style={{
+              backgroundImage:
+                "linear-gradient(120deg, #5eead4, #2dd4bf, #38bdf8, #818cf8)",
+              backgroundSize: "200% auto",
+              animation: "shimmer 4s linear infinite",
+            }}
+          >
+            {profile.title}
+          </span>
         </motion.h1>
 
         <motion.p
@@ -53,22 +68,26 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8 flex flex-wrap items-center gap-4"
         >
-          <a
-            href="#systems"
-            className="group inline-flex h-12 items-center gap-2 rounded-lg bg-teal-400 px-7 font-semibold text-ink-950 transition-all hover:bg-teal-300 hover:shadow-[0_0_36px_-8px_rgba(45,212,191,0.7)]"
-          >
-            Explore the work
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass glass-hover inline-flex h-12 items-center gap-2 rounded-lg px-7 text-slate-200"
-          >
-            <Github className="h-4 w-4" />
-            GitHub
-          </a>
+          <Magnetic strength={0.3}>
+            <a
+              href="#systems"
+              className="group inline-flex h-12 items-center gap-2 rounded-lg bg-teal-400 px-7 font-semibold text-ink-950 transition-all hover:bg-teal-300 hover:shadow-[0_0_36px_-8px_rgba(45,212,191,0.7)]"
+            >
+              Explore the work
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.25}>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass glass-hover inline-flex h-12 items-center gap-2 rounded-lg px-7 text-slate-200"
+            >
+              <Github className="h-4 w-4" />
+              GitHub
+            </a>
+          </Magnetic>
         </motion.div>
 
         <motion.div

@@ -9,9 +9,9 @@ export const profile = {
   org: "Masarat",
   location: "Tripoli, Libya",
   tagline:
-    "Architecting Libya's banking & fintech platform — 10 production systems, one engineer.",
+    "Leading software architecture at Masarat — the systems that power Libya's digital banking & fintech.",
   intro:
-    "I design, build, and operationally maintain the entire Masarat platform: digital wallet & ledger, online payments, vouchers, insurance, bank notifications, anti-money-laundering, a voice AI banking assistant, release management, an internal dev-office workspace, and a bespoke QA automation studio.",
+    "I lead software architecture and development at Masarat, working alongside a talented team of developers to build Libya's digital banking and fintech platform. The systems in this portfolio are ones I personally designed and engineered end to end — from architecture through implementation, CI/CD, observability, and operational maintenance.",
   email: "a.mesbahi@masarat.ly",
   github: "https://github.com/anstwechy",
   githubHandle: "anstwechy",
@@ -19,10 +19,10 @@ export const profile = {
 
 /** Headline metrics for the stats band. */
 export const stats: { value: string; label: string; suffix?: string }[] = [
-  { value: "10", label: "Production systems" },
   { value: "10", label: "k concurrent wallet users load-tested", suffix: "+" },
-  { value: "6", label: "Libyan banks served" },
+  { value: "6", label: "Libyan banks on the platform" },
   { value: "1.5", label: "s p99 transfer SLO", suffix: "<" },
+  { value: "99.9", label: "% target uptime across services", suffix: "" },
 ];
 
 /** Categorized tech stack. */
@@ -131,7 +131,7 @@ export const practices: {
   {
     title: "Tiered CI/CD",
     description:
-      "GitHub Actions + GitLab CI with smoke → PR → full gates, Docker Hub publishing, and Docker Swarm deployment across all ten systems.",
+      "GitHub Actions + GitLab CI with smoke → PR → full gates, Docker Hub publishing, and Docker Swarm deployment across every system in the platform.",
     icon: "gitBranch",
   },
   {

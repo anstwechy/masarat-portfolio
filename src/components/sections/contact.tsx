@@ -3,6 +3,8 @@
 import { motion } from "motion/react";
 import { Mail, Github, MapPin, ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/site";
+import { AnimatedBeam } from "@/components/effects/animated-beam";
+import { Magnetic } from "@/components/effects/magnetic";
 
 export function Contact() {
   return (
@@ -20,13 +22,17 @@ export function Contact() {
         >
           {/* Background beam */}
           <div
-            className="pointer-events-none absolute inset-0 opacity-40"
+            className="pointer-events-none absolute inset-0 opacity-50"
             style={{
               background:
                 "radial-gradient(ellipse 60% 80% at 50% 0%, rgba(45,212,191,0.18), transparent 70%)",
             }}
             aria-hidden
           />
+          {/* Top animated beam */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 px-8">
+            <AnimatedBeam />
+          </div>
 
           <div className="relative mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-teal-400">
@@ -41,23 +47,27 @@ export function Contact() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href={`mailto:${profile.email}`}
-                className="group inline-flex h-12 items-center gap-2 rounded-lg bg-teal-400 px-7 font-semibold text-ink-950 transition-all hover:bg-teal-300 hover:shadow-[0_0_36px_-8px_rgba(45,212,191,0.7)]"
-              >
-                <Mail className="h-4 w-4" />
-                {profile.email}
-              </a>
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass glass-hover inline-flex h-12 items-center gap-2 rounded-lg px-7 text-slate-200"
-              >
-                <Github className="h-4 w-4" />
-                @{profile.githubHandle}
-                <ArrowUpRight className="h-4 w-4 opacity-50" />
-              </a>
+              <Magnetic strength={0.3}>
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="group inline-flex h-12 items-center gap-2 rounded-lg bg-teal-400 px-7 font-semibold text-ink-950 transition-all hover:bg-teal-300 hover:shadow-[0_0_36px_-8px_rgba(45,212,191,0.7)]"
+                >
+                  <Mail className="h-4 w-4" />
+                  {profile.email}
+                </a>
+              </Magnetic>
+              <Magnetic strength={0.25}>
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass glass-hover inline-flex h-12 items-center gap-2 rounded-lg px-7 text-slate-200"
+                >
+                  <Github className="h-4 w-4" />
+                  @{profile.githubHandle}
+                  <ArrowUpRight className="h-4 w-4 opacity-50" />
+                </a>
+              </Magnetic>
             </div>
 
             <div className="mt-8 flex items-center justify-center gap-2 text-sm text-slate-500">

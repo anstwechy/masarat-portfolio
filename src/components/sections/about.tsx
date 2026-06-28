@@ -7,7 +7,9 @@ const focus = [
   "Backend architecture & microservices",
   "Double-entry ledger & money movement",
   "AI agents & speech (Arabic/Libyan)",
+  "Risk & compliance (AML, sanctions/PEP)",
   "Cloud-native DevOps & observability",
+  "Team leadership & technical direction",
 ];
 
 export function About() {
@@ -22,17 +24,17 @@ export function About() {
             About
           </p>
           <h2 className="mt-3 max-w-xl font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
-            One engineer. Ten production systems. The whole platform.
+            Architecture & engineering across the whole platform.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-slate-300">
             {profile.intro}
           </p>
           <p className="mt-4 leading-relaxed text-slate-400">
             As Head of Development at {profile.org} in {profile.location}, I
-            own the full lifecycle of every system — from architectural design
-            through implementation, CI/CD, observability, load testing, and
-            operational maintenance — across the Libyan banking & fintech
-            domain.
+            lead a team of developers and own the technical direction of the
+            platform — from architectural design through implementation,
+            CI/CD, observability, load testing, and operational maintenance,
+            across the Libyan banking and fintech domain.
           </p>
         </div>
 

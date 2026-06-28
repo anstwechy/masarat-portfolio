@@ -2,11 +2,14 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { CursorSpotlight } from "@/components/effects/cursor-spotlight";
+import { ScrollReveal } from "@/components/effects/scroll-reveal";
 
 /**
- * Initializes Lenis smooth scrolling for the whole app.
+ * Initializes Lenis smooth scrolling for the whole app and mounts the
+ * global cinematic effects (cursor spotlight + GSAP scroll reveals).
  * Respects prefers-reduced-motion: if the user wants reduced motion,
- * Lenis is not started so native scrolling/anchor jumps are instant.
+ * Lenis and the effects are not started.
  */
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -51,5 +54,11 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  return <>{children}</>;
+  return (
+    <>
+      <CursorSpotlight />
+      <ScrollReveal />
+      {children}
+    </>
+  );
 }

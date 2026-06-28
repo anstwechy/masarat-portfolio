@@ -24,11 +24,12 @@ export function TechStack() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
           {techStack.map((group) => (
             <div
               key={group.category}
-              className="glass rounded-2xl p-6 transition-colors hover:border-teal-400/20"
+              data-reveal-child
+              className="glass group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30"
             >
               <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-teal-300">
                 {group.category}
